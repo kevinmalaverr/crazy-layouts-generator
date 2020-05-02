@@ -4,6 +4,9 @@ var colorActual;
 var idActual;
 var matriz = [[],[],[],[],[],[],[],[],[],[]];
 
+var r = 2;
+var c = 2;
+
 var dict = [
     [".","#bdc3c7"],
     ["item-a","#c0392b"],
@@ -25,8 +28,8 @@ var dict = [
 ]
 
 function addCells(){
-    var r = parseInt($("#rows").children("option:selected").val());
-    var c = parseInt($("#cols").children("option:selected").val());
+    r = parseInt($("#rows").children("option:selected").val());
+    c = parseInt($("#cols").children("option:selected").val());
 
     $(".container").css("grid-template","repeat("+ r +",40px) /repeat("+ c + ",40px)")
     $( ".container" ).empty();
@@ -75,9 +78,6 @@ function generate(){
 
     var areas = "";
 
-    var r = parseInt($("#rows").children("option:selected").val());
-    var c = parseInt($("#cols").children("option:selected").val());
-
     for(var i = 0;i<r;i++){
         areas += '"'
         for(var j = 0;j<c;j++){
@@ -87,7 +87,7 @@ function generate(){
                 onMatriz.push(matriz[i][j]);
             }
         }
-        areas += '"'
+        areas += '"\n\t\t\t\t\t'
     }
 
     //generate items
@@ -95,6 +95,16 @@ function generate(){
     $(".result").copyCSS('.container');
     $(".result").css("grid-template-areas",areas);
 
+    $("#code").empty();
+
+    var text = "<style>\n\t.container{\n";
+    text += "\t\tdisplay: grid;\n\t\tgap: 8px;\n\t\theight: 100vh;\n";
+    text += "\t\tgrid-template-areas:    " + areas +";\n\t}\n";
+    text += "</style>\n\n"
+
+    text += ('<div class="container">\n');
+
+    var myCode = document.getElementById('code');
     for(var i = 0;i<onMatriz.length;i++){
         var a = document.createElement("div");
         var x = onMatriz[i];
@@ -104,13 +114,17 @@ function generate(){
         }
         $(a).css("background-color","#2c3e50");
         $(a).css("grid-area",x);
-        $(".result").append(a);
+        $(".result").append(a);        
+        text += ('\t<div style="background-color: rgb(44, 62, 80); grid-area: ' + x +'"></div>\n');
     }
 
-   
+    text += ('</div> \n');
+
+    $("#code").append(text);
+
+    myCode.innerHTML = myCode.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
 }
-
-
 
 $("#generate").click(generate);
 
@@ -118,11 +132,21 @@ addCells(2,2);
 $( "select" ).change( addCells );
 addColors();
 
+$("#see").click(view);
 
-$("#clean").click(function(){
-    location.reload();
+function view() {
 
-});
+    var newD = document.createElement("div");
+    var cont = $( ".result" ).clone();
+    $(cont).css("grid-template-columns","repeat("+ c +",1fr)");
+    $(cont).css("grid-template-rows","repeat("+ r +",1fr)");
+    $(cont).css("height","100vh");
+    $(cont).css("width","100%");
+    $(newD).append(cont);
+
+    var opened = window.open("");
+    opened.document.write("<html><head><title>Crazy layout Output</title></head><body>"+  $(newD).html() +"</body></html>");
+  }
 
 });
 

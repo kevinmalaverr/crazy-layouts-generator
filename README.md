@@ -3,7 +3,7 @@
 layout generator for web pages.
 
 ------------
-![preview](http://gdurl.com/5bwI)
+![preview](img/preview.png)
 
 ------------
 

@@ -23,12 +23,14 @@ layout generator for web pages.
 - ### only set square layouts .
 dont :
 ![](http://gdurl.com/0YzK)
+
 do:
 ![](http://gdurl.com/QRIk)
 
 - ### Don't use the same color on separate regions .
 dont:
 ![](http://gdurl.com/Mn3gg)
+
 do:
 ![](https://gdurl.com/742U)
 

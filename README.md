@@ -22,16 +22,16 @@ layout generator for web pages.
 
 - ### only set square layouts .
 dont :
-![dont1](http://gdurl.com/0YzK)
+![dont1](img/dont1)
 
 do:
-![do1](http://gdurl.com/QRIk)
+![do1](img/do1)
 
 - ### Don't use the same color on separate regions .
 dont:
-![dont2](http://gdurl.com/Mn3gg)
+![dont2](img/dont2)
 
 do:
-![do2](https://gdurl.com/742U)
+![do2](img/do2)
 
 

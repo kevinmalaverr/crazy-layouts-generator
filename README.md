@@ -3,7 +3,7 @@
 layout generator for web pages.
 
 ------------
-![](http://gdurl.com/5bwI)
+![preview](http://gdurl.com/5bwI)
 
 ------------
 
@@ -22,16 +22,16 @@ layout generator for web pages.
 
 - ### only set square layouts .
 dont :
-![](http://gdurl.com/0YzK)
+![dont1](http://gdurl.com/0YzK)
 
 do:
-![](http://gdurl.com/QRIk)
+![do1](http://gdurl.com/QRIk)
 
 - ### Don't use the same color on separate regions .
 dont:
-![](http://gdurl.com/Mn3gg)
+![dont2](http://gdurl.com/Mn3gg)
 
 do:
-![](https://gdurl.com/742U)
+![do2](https://gdurl.com/742U)
 
 

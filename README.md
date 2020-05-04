@@ -18,7 +18,7 @@ layout generator for web pages.
 
 ------------
 
-## warnigns
+## warnings
 
 - ### only set square layouts .
 dont :

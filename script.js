@@ -71,6 +71,7 @@ function addColors(){
 }
 
 function generate(){
+    console.log(matriz);
 
     var onMatriz = [];
 
@@ -147,6 +148,32 @@ function view() {
     var opened = window.open("");
     opened.document.write("<html><head><title>Crazy layout Output</title></head><body>"+  $(newD).html() +"</body></html>");
   }
+
+function example(){
+    $(".container").remove();
+    $("#edit").append('<div class="container" style="grid-template-rows: repeat(5, 40px); grid-template-columns: repeat(7, 40px); grid-template-areas: none;"><div class="item" id="00" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="01" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="02" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="03" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="04" style="background-color: rgb(39, 174, 96);"></div><div class="item" id="05" style="background-color: rgb(39, 174, 96);"></div><div class="item" id="06" style="background-color: rgb(83, 92, 104);"></div><div class="item" id="10" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="11" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="12" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="13" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="14" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="15" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="16" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="20" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="21" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="22" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="23" style="background-color: rgb(192, 57, 43);"></div><div class="item" id="24" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="25" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="26" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="30" style="background-color: rgb(255, 121, 121);"></div><div class="item" id="31" style="background-color: rgb(142, 68, 173);"></div><div class="item" id="32" style="background-color: rgb(41, 128, 185);"></div><div class="item" id="33" style="background-color: rgb(41, 128, 185);"></div><div class="item" id="34" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="35" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="36" style="background-color: rgb(243, 156, 18);"></div><div class="item" id="40" style="background-color: rgb(186, 220, 88);"></div><div class="item" id="41" style="background-color: rgb(142, 68, 173);"></div><div class="item" id="42" style="background-color: rgb(41, 128, 185);"></div><div class="item" id="43" style="background-color: rgb(41, 128, 185);"></div><div class="item" id="44" style="background-color: rgb(44, 62, 80);"></div><div class="item" id="45" style="background-color: rgb(44, 62, 80);"></div><div class="item" id="46" style="background-color: rgb(44, 62, 80);"></div></div>');
+    
+    r = 5;   
+    c = 7;
+
+    matriz=[["item-a", "item-a" ,"item-a" ,"item-a" ,"item-d", "item-d", "item-p"],
+            ["item-a", "item-a", "item-a", "item-a" ,"item-c" ,"item-c" ,"item-c"],
+            ["item-a", "item-a" ,"item-a" ,"item-a", "item-c" ,"item-c" ,"item-c"],
+            ["item-i" ,"item-o" ,"item-f", "item-f" ,"item-c", "item-c" ,"item-c"],
+            ["item-l" ,"item-o", "item-f" ,"item-f", "item-h" ,"item-h", "item-h"],
+            [],[],[],[],[]]
+
+
+    generate();
+
+    
+}
+
+$("#example").click(example);
+
+$("#clean").click(function(){
+    location.reload();
+});
 
 });
 
